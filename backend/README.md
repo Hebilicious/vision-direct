@@ -1,11 +1,23 @@
-```bash
-curl localhost:3000/?sortBy=category
+Start the backend server with the following command :
+
+```sh
+yarn dev #port 3003 by default
 ```
 
-```bash
-curl localhost:3000/?sortBy=priority
-```
+This returns the aggregated data :
 
 ```bash
-curl localhost:3000
+curl localhost:3003
+```
+
+This returns the data sorted by category
+
+```bash
+curl localhost:3003/?sortBy=category
+```
+
+This returns the data sorted by priority
+
+```bash
+curl localhost:3003/?sortBy=priority
 ```

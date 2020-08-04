@@ -1,7 +1,10 @@
 import fastify from "fastify"
 import fetch from "node-fetch"
+import cors from "fastify-cors"
 
 const server = fastify({ logger: true })
+
+server.register(cors, { origin: true, allowedHeaders: ["*"] })
 
 const firstApi = "http://test1.infra.getlenses.co.uk/"
 const secondApi = "http://test2.infra.getlenses.co.uk/"
@@ -30,8 +33,8 @@ const getData = async (url) => {
 }
 
 const getSortingOrder = (query) => {
-    if (query.sortBy.toLowerCase() === "priority") return "priority"
-    if (query.sortBy.toLowerCase() === "category") return "category"
+    if (query?.sortBy?.toLowerCase() === "priority") return "priority"
+    if (query?.sortBy?.toLowerCase() === "category") return "category"
     return null
 }
 
@@ -43,7 +46,7 @@ server.get("/", async (request, reply) => {
 })
 
 // Run the server!
-server.listen(3000, function (err, address) {
+server.listen(3003, function (err, address) {
     if (err) {
         server.log.error(err)
         process.exit(1)

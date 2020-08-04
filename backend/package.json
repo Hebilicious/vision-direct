@@ -1,7 +1,6 @@
 {
     "scripts": {
-        "start": "yarn ts index.ts",
-        "ts": "nodemon --exec node -r esm -r esbuild-register"
+        "dev": "nodemon --exec node -r esm -r esbuild-register index.ts"
     },
     "dependencies": {
         "fastify": "^3.1.1"
@@ -12,6 +11,7 @@
         "esbuild": "^0.6.16",
         "esbuild-register": "^1.0.2",
         "esm": "^3.2.25",
+        "fastify-cors": "^4.1.0",
         "node-fetch": "^2.6.0",
         "nodemon": "^2.0.4",
         "typescript": "^3.9.7"
